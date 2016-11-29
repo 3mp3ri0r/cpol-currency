@@ -1,8 +1,8 @@
 {
   "name": "cpol-currency",
+  "description": "<cpol-currency> is a polymer currency generator tools. It convert your input amount to be currency formated.",
   "version": "1.0.0",
   "homepage": "https://github.com/3mp3ri0r/cpol-currency",
-  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -12,5 +12,18 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
-  }
+  },
+  "keywords": [
+    "polymer",
+    "currency",
+    "polymer-currency-generator",
+    "polymer-currency-converter",
+    "currency-generator",
+    "currency-converter",
+  ],
+  "authors": [
+    "Christoforus Surjoputro <cs_sanmar@yahoo.com> (https://github.com/3mp3ri0r)"
+  ],
+  "license": "MIT",
+  "private": false
 }
