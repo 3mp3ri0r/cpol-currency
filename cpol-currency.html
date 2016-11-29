@@ -1,0 +1,66 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="cpol-currency">
+
+
+  <template>
+
+    <style>
+      /* local DOM styles go here */
+      :host {
+        display: inline-block;
+      }
+    </style>
+
+    <!-- local DOM goes here -->
+    [[generateCurrency]]
+  </template>
+
+  <script>
+  Polymer({
+    is: 'cpol-currency',
+    properties: {
+      amount: {
+        type: Number,
+        value: 0,
+      },
+      fixed: {
+        type: Number,
+        value: 2,
+      },
+      decimalSeparator: {
+        type: String,
+        value: '.',
+      },
+      valueSeparator: {
+        type: String,
+        value: ',',
+      },
+      currencyPrefix: {
+        type: String,
+        value: '$',
+      },
+      currencySuffix: {
+        type: String,
+        value: '',
+      },
+    },
+    observers: [
+      '_generateCurrency(amount, fixed, decimalSeparator, valueSeparator, currencyPrefix, currencySuffix)'
+    ],
+    _generateCurrency: function(amount, fixed, decimalSeparator, valueSeparator, currencyPrefix, currencySuffix) {
+      money = amount;
+      if(!money || isNaN(money)) {
+        money = '0';
+      }
+      moneyToFixed = Number(money).toFixed(fixed);
+      parts = moneyToFixed.split('.');
+      fnum = parts[0];
+      decimal = parts[1] ? decimalSeparator + parts[1] : decimalSeparator + '00';
+      this.generateCurrency = currencyPrefix + ' ' + fnum.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + valueSeparator) + decimal + currencySuffix;
+    }
+  });
+  </script>
+
+</dom-module>
+

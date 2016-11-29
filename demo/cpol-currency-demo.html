@@ -1,0 +1,42 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../cpol-currency.html">
+
+
+<dom-module id="cpol-currency-demo">
+  <template>
+    <style>
+      :host {
+        font-family: sans-serif;
+      };
+    </style>
+  
+    <div><cpol-currency amount=[[userMoney]]></cpol-currency></div>
+    <div><cpol-currency amount=[[userMoneyDecimal]]></cpol-currency></div>
+    <div>
+    <cpol-currency
+      decimal-separator=','
+      value-separator='.'
+      currency-prefix='Rp'
+      amount=[[userMoneyDecimal]]>
+    </cpol-currency>
+    </div>
+    <div><cpol-currency amount='Enter'></cpol-currency></div>
+    
+  </template>
+  
+  <script>
+    Polymer({
+      is: "cpol-currency-demo",
+      properties: {
+        userMoney: {
+          type: Number,
+          value: 12345,
+        },
+        userMoneyDecimal: {
+          type: Number,
+          value: 12345.25,
+        },
+      },
+    });
+  </script>
+</dom-module>
