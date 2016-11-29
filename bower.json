@@ -11,7 +11,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0",
+    "polymer": "Polymer/polymer#^1.0.0"
   },
   "keywords": [
     "polymer",
@@ -22,7 +22,7 @@
     "currency-converter"
   ],
   "authors": [
-    "Christoforus Surjoputro <cs_sanmar@yahoo.com> (https://github.com/3mp3ri0r)",
+    "Christoforus Surjoputro <cs_sanmar@yahoo.com> (https://github.com/3mp3ri0r)"
   ],
   "license": "MIT",
   "private": false
