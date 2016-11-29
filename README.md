@@ -2,6 +2,9 @@
 
 `<cpol-currency>` is a polymer currency generator tools. It convert your input amount to be currency formated.
 
+###How to install:###
+`bower install --save cpol-currency`
+
 ###Simple example to use &lt;cpol-currency&gt;:###
 ```html
 <cpol-currency amount='10'></cpol-currency>
