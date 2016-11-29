@@ -70,7 +70,7 @@
 
 ##Properties you can use:##
 Properties | Description | Type | Default
---- | --- | ---
+--- | --- | --- | ---
 amount | Amount of money that will be converted to currency format | Number or String | 0
 fixed | Number of decimal will be converted | Number | 2
 decimal-separator | Character for separate decimal | String | '.'
