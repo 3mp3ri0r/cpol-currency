@@ -25,5 +25,8 @@
     "Christoforus Surjoputro <cs_sanmar@yahoo.com> (https://github.com/3mp3ri0r)"
   ],
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.7"
+  }
 }
