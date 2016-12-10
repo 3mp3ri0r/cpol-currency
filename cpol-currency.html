@@ -1,78 +1,74 @@
 <link rel="import" href="../polymer/polymer.html">
 
 <!--
-# &lt;cpol-currency&gt;
-
 `<cpol-currency>` is a polymer currency generator tools. It convert your input amount to be currency formated.
 
 ### How to install:
-`bower install --save cpol-currency`
+
+    bower install --save cpol-currency
 
 ### Simple example to use &lt;cpol-currency&gt;:
-```html
-<cpol-currency amount='10'></cpol-currency>
-```
+
+    <cpol-currency amount='10'></cpol-currency>
 
 ### You can use data binding to insert the amount and the type can be number or string.
-```html
-  <template>
-    <style>
-      :host {
-        display: block;
-      };
-    </style>
-    ...
-    <cpol-currency amount=[[userMoney]]></cpol-currency>
-    ...
-  </template>
-  <script>
-    Polymer({
+
+    <template>
+      <style>
+        :host {
+          display: block;
+        };
+      </style>
       ...
-      properties: {
+      <cpol-currency amount=[[userMoney]]></cpol-currency>
+      ...
+    </template>
+    <script>
+      Polymer({
         ...
-        userMoney: {
-          type: string,
-          value: '1500',
+        properties: {
+          ...
+          userMoney: {
+            type: string,
+            value: '1500',
+          },
+          ...
         },
         ...
-      },
-      ...
-    });
-  </script>
-```
+      });
+    </script>
 
 ### You can also change number of decimal, character for decimal separator and thousand separator, currency prefix and suffix for currency symbol.
-```html
-  <template>
-    <style>
-      :host {
-        display: block;
-      };
-    </style>
-    ...
-    <cpol-currency
-      decimal-separator=','
-      value-separator='.'
-      currency-prefix='Rp'
-      amount=[[userMoneyDecimal]]>
-    </cpol-currency>
-    ...
-  </template>
-  <script>
-    Polymer({
+
+    <template>
+      <style>
+        :host {
+          display: block;
+        };
+      </style>
       ...
-      properties: {
+      <cpol-currency
+        decimal-separator=','
+        value-separator='.'
+        currency-prefix='Rp'
+        amount=[[userMoneyDecimal]]>
+      </cpol-currency>
+      ...
+    </template>
+    <script>
+      Polymer({
         ...
-        userMoneyDecimal: {
-          type: Number,
-          value: 1350.35,
+        properties: {
+          ...
+          userMoneyDecimal: {
+            type: Number,
+            value: 1350.35,
+          },
+          ...
         },
         ...
-      },
-      ...
-    });
-  </script>
-```
+      });
+    </script>
 
 @demo demo/index.html
 -->
