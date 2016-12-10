@@ -1,3 +1,4 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://beta.webcomponents.org/element/owner/my-element)
 # &lt;cpol-currency&gt;
 
 `<cpol-currency>` is a polymer currency generator tools. It convert your input amount to be currency formated.
