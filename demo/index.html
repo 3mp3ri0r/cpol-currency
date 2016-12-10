@@ -1,16 +1,50 @@
 <!doctype html>
 <html>
   <head>
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script>
-      /*
-      window.Polymer = window.Polymer || {};
-      window.Polymer.dom = 'shadow';
-      */
-    </script>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/paper-input/paper-input.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+    <link rel="import" href="../cpol-currency.html">
     <link rel="import" href="cpol-currency-demo.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      .vertical-section-container {
+        max-width: 500px;
+      }
+      paper-checkbox {
+        display: block;
+        margin-right: 24px;
+      }
+    </style>
   </head>
+
   <body>
-    <cpol-currency-demo></cpol-currency-demo>
+    <div class="vertical-section-container centered">
+      <h4>Demo simple use of cpol-currency</h4>
+      <demo-snippet>
+        <template is="dom-bind">
+          <paper-input label="Amount" value="{{userMoney}}"></paper-input>
+          <cpol-currency amount=[[userMoney]]></cpol-currency>
+        </template>
+      </demo-snippet>
+
+      <h4>Demo use of cpol-currency with custom output</h4>
+      <demo-snippet>
+        <template is="dom-bind">
+          <paper-input label="Amount" value="{{userMoney}}"></paper-input>
+          <cpol-currency
+            decimal-separator=','
+            value-separator='.'
+            currency-prefix='Rp'
+            amount=[[userMoney]]>
+          </cpol-currency>
+        </template>
+      </demo-snippet>
+    </div>
   </body>
 </html>
