@@ -1,4 +1,4 @@
-<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 
 <!--
 # &lt;cpol-currency&gt;
@@ -79,9 +79,7 @@
 
 <dom-module id="cpol-currency">
 
-
   <template>
-
     <style>
       /* local DOM styles go here */
       :host {
@@ -94,66 +92,66 @@
   </template>
 
   <script>
-  Polymer({
-    is: 'cpol-currency',
-    properties: {
+    Polymer({
+      is: 'cpol-currency',
+      properties: {
 
-      /** Amount of money you want to convert to currency format. */
-      amount: {
-        type: Number,
-        value: 0,
+        /** Amount of money you want to convert to currency format. */
+        amount: {
+          type: Number,
+          value: 0,
+        },
+
+        /** The maximum number of decimal. */
+        fixed: {
+          type: Number,
+          value: 2,
+        },
+
+        /** Character for separate decimal. */
+        decimalSeparator: {
+          type: String,
+          value: '.',
+        },
+
+        /** Character for separate thousand in amount. */
+        valueSeparator: {
+          type: String,
+          value: ',',
+        },
+
+        /** Prefix character of currency symbol. */
+        currencyPrefix: {
+          type: String,
+          value: '$',
+        },
+
+        /** Suffix character of currency symbol. */
+        currencySuffix: {
+          type: String,
+          value: '',
+        },
       },
 
-      /** The maximum number of decimal. */
-      fixed: {
-        type: Number,
-        value: 2,
-      },
+      observers: [
+        '_generateCurrency(amount, fixed, decimalSeparator, valueSeparator, currencyPrefix, currencySuffix)'
+      ],
 
-      /** Character for separate decimal. */
-      decimalSeparator: {
-        type: String,
-        value: '.',
-      },
-
-      /** Character for separate thousand in amount. */
-      valueSeparator: {
-        type: String,
-        value: ',',
-      },
-
-      /** Prefix character of currency symbol. */
-      currencyPrefix: {
-        type: String,
-        value: '$',
-      },
-
-      /** Suffix character of currency symbol. */
-      currencySuffix: {
-        type: String,
-        value: '',
-      },
-    },
-
-    observers: [
-      '_generateCurrency(amount, fixed, decimalSeparator, valueSeparator, currencyPrefix, currencySuffix)'
-    ],
-
-    /**
-     * Returns input amount in currency format.
-     */
-    _generateCurrency: function(amount, fixed, decimalSeparator, valueSeparator, currencyPrefix, currencySuffix) {
-      money = amount;
-      if(!money || isNaN(money)) {
-        money = '0';
+      /**
+       * Returns input amount in currency format.
+       */
+      _generateCurrency: function(amount, fixed, decimalSeparator, valueSeparator, currencyPrefix, currencySuffix) {
+        money = amount;
+        if(!money || isNaN(money)) {
+          money = '0';
+        }
+        moneyToFixed = Number(money).toFixed(fixed);
+        parts = moneyToFixed.split('.');
+        fnum = parts[0];
+        decimal = parts[1] ? decimalSeparator + parts[1] : decimalSeparator + '00';
+        this.generateCurrency = currencyPrefix + ' ' + fnum.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + valueSeparator) + decimal + currencySuffix;
       }
-      moneyToFixed = Number(money).toFixed(fixed);
-      parts = moneyToFixed.split('.');
-      fnum = parts[0];
-      decimal = parts[1] ? decimalSeparator + parts[1] : decimalSeparator + '00';
-      this.generateCurrency = currencyPrefix + ' ' + fnum.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + valueSeparator) + decimal + currencySuffix;
-    }
-  });
+    });
   </script>
 
 </dom-module>
