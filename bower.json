@@ -1,8 +1,13 @@
 {
   "name": "cpol-currency",
-  "description": "<cpol-currency> is a polymer currency generator tools. It convert your input amount to be currency formated.",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "homepage": "https://github.com/3mp3ri0r/cpol-currency",
+  "description": "<cpol-currency> is a polymer currency generator tools. It convert your input amount to be currency formated.",
+  "main": "cpol-currency.html",
+  "authors": [
+    "Christoforus Surjoputro <cs_sanmar@yahoo.com> (https://github.com/3mp3ri0r)"
+  ],
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -10,9 +15,6 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
-  },
   "keywords": [
     "polymer",
     "currency",
@@ -21,16 +23,15 @@
     "currency-generator",
     "currency-converter"
   ],
-  "authors": [
-    "Christoforus Surjoputro <cs_sanmar@yahoo.com> (https://github.com/3mp3ri0r)"
-  ],
-  "license": "MIT",
-  "private": false,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.5",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.5",
     "paper-input": "PolymerElements/paper-input#^1.1.22",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.1"
-  }
+  },
+  "private": false
 }
